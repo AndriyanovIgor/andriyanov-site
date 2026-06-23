@@ -105,7 +105,7 @@
             box-shadow: 0 0 20px rgba(100, 255, 218, 0.2);
         }
 
-        /* ----- HERO с картинкой (умеренная прозрачность) ----- */
+        /* ----- HERO — картинка ярче и меньше по масштабу ----- */
         .hero {
             padding: 80px 0 60px;
             position: relative;
@@ -118,16 +118,18 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            /* Точно соответствует имени файла на вашем скриншоте */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 85%;          /* ← уменьшаем масштаб: 85% от ширины секции */
+            height: 85%;
             background-image: url('images/gpt-image-2_Futuristic_digital_artwork_symbolizing_enterprise_integration_a_massive_luminous-0.jpg');
-            background-size: cover;
+            background-size: contain;
+            background-repeat: no-repeat;
             background-position: center;
-            opacity: 0.3; /* Хорошо видна, но не перебивает текст */
+            opacity: 0.5;        /* ← ярче, чем было (0.3 → 0.5) */
             z-index: 0;
+            filter: brightness(1.1) contrast(1.05); /* лёгкое усиление */
         }
 
         .hero::after {
@@ -137,7 +139,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(10, 25, 47, 0.8) 0%, rgba(10, 25, 47, 0.3) 100%);
+            background: linear-gradient(135deg, rgba(10, 25, 47, 0.75) 0%, rgba(10, 25, 47, 0.25) 100%);
             z-index: 1;
         }
 
@@ -520,6 +522,11 @@
             .benefits-list {
                 grid-template-columns: 1fr;
             }
+            .hero::before {
+                width: 95%;
+                height: 95%;
+                opacity: 0.35; /* на мобильных чуть темнее */
+            }
         }
 
         @media (max-width: 480px) {
@@ -539,6 +546,11 @@
             .contacts {
                 flex-direction: column;
                 gap: 16px;
+            }
+            .hero::before {
+                width: 100%;
+                height: 100%;
+                opacity: 0.3;
             }
         }
     </style>

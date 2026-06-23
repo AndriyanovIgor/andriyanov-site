@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Игорь Андриянов — Бизнес-аналитик 1С:ERP</title>
     <style>
-        /* ----- Импорт шрифта ----- */
         @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap');
 
-        /* ----- Сброс и общие стили ----- */
         * {
             margin: 0;
             padding: 0;
@@ -29,7 +27,7 @@
             padding: 0 24px;
         }
 
-        /* ----- ШАПКА (тёмная) ----- */
+        /* ----- ШАПКА ----- */
         header {
             background: rgba(10, 25, 47, 0.85);
             backdrop-filter: blur(12px);
@@ -107,7 +105,7 @@
             box-shadow: 0 0 20px rgba(100, 255, 218, 0.2);
         }
 
-        /* ----- HERO (с фоном-картинкой) ----- */
+        /* ----- HERO с картинкой (умеренная прозрачность) ----- */
         .hero {
             padding: 80px 0 60px;
             position: relative;
@@ -117,7 +115,6 @@
             align-items: center;
         }
 
-        /* Фоновое изображение с затемнением */
         .hero::before {
             content: '';
             position: absolute;
@@ -125,14 +122,14 @@
             left: 0;
             right: 0;
             bottom: 0;
+            /* Точно соответствует имени файла на вашем скриншоте */
             background-image: url('images/gpt-image-2_Futuristic_digital_artwork_symbolizing_enterprise_integration_a_massive_luminous-0.jpg');
             background-size: cover;
             background-position: center;
-            opacity: 0.15;
+            opacity: 0.3; /* Хорошо видна, но не перебивает текст */
             z-index: 0;
         }
 
-        /* Дополнительная тёмная вуаль для читаемости текста */
         .hero::after {
             content: '';
             position: absolute;
@@ -140,7 +137,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(10, 25, 47, 0.92) 0%, rgba(10, 25, 47, 0.6) 100%);
+            background: linear-gradient(135deg, rgba(10, 25, 47, 0.8) 0%, rgba(10, 25, 47, 0.3) 100%);
             z-index: 1;
         }
 
@@ -217,7 +214,7 @@
             transform: translateY(-2px);
         }
 
-        /* ----- Общие стили для секций ----- */
+        /* ----- Остальные секции (без изменений) ----- */
         section {
             padding: 80px 0;
         }
@@ -241,7 +238,6 @@
             border-radius: 2px;
         }
 
-        /* ----- Услуги (карточки с эффектом стекла) ----- */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -290,7 +286,6 @@
             font-size: 1.1rem;
         }
 
-        /* ----- Типовые потоки (карточки) ----- */
         .cases-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -345,7 +340,6 @@
             font-style: italic;
         }
 
-        /* Блок запроса примеров ТЗ */
         .request-block {
             text-align: center;
             margin-top: 48px;
@@ -364,11 +358,6 @@
             margin: 0 auto 20px;
         }
 
-        .request-block .btn-primary {
-            padding: 12px 36px;
-        }
-
-        /* ----- Преимущества ----- */
         .benefits-list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -397,7 +386,6 @@
             min-width: 24px;
         }
 
-        /* ----- Технологический стек ----- */
         .tech-stack {
             display: flex;
             flex-wrap: wrap;
@@ -427,7 +415,6 @@
             transform: translateY(-2px);
         }
 
-        /* ----- Обо мне ----- */
         .about-text {
             max-width: 760px;
             margin: 0 auto;
@@ -441,7 +428,6 @@
             color: #ccd6f6;
         }
 
-        /* ----- Футер (тёмный) ----- */
         footer {
             background: #0a192f;
             border-top: 1px solid rgba(100, 255, 218, 0.06);
@@ -485,10 +471,6 @@
             border-bottom-color: #64ffda;
         }
 
-        footer .btn-primary {
-            padding: 14px 44px;
-        }
-
         .footer-copy {
             margin-top: 36px;
             font-size: 0.85rem;
@@ -497,20 +479,17 @@
             padding-top: 24px;
         }
 
-        /* ----- Адаптивность ----- */
         @media (max-width: 1024px) {
             .hero .container {
                 grid-template-columns: 1fr;
                 gap: 40px;
                 text-align: center;
             }
-
             .hero-text p {
                 max-width: 100%;
                 margin-left: auto;
                 margin-right: auto;
             }
-
             .hero-text .buttons {
                 justify-content: center;
             }
@@ -520,36 +499,26 @@
             header .container {
                 flex-direction: column;
             }
-
             nav {
                 justify-content: center;
                 gap: 16px;
             }
-
             .hero {
                 padding: 60px 0 40px;
                 min-height: auto;
             }
-
             .hero-text h1 {
                 font-size: 2.2rem;
             }
-
             .section-title {
                 font-size: 1.8rem;
             }
-
             .services-grid,
             .cases-grid {
                 grid-template-columns: 1fr;
             }
-
             .benefits-list {
                 grid-template-columns: 1fr;
-            }
-
-            .request-block p {
-                font-size: 1rem;
             }
         }
 
@@ -557,11 +526,9 @@
             .hero-text h1 {
                 font-size: 1.8rem;
             }
-
             .hero-text p {
                 font-size: 1rem;
             }
-
             .btn-primary,
             .btn-secondary {
                 padding: 12px 24px;
@@ -569,21 +536,15 @@
                 width: 100%;
                 text-align: center;
             }
-
             .contacts {
                 flex-direction: column;
                 gap: 16px;
-            }
-
-            .request-block {
-                padding: 24px 16px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- ===== ШАПКА ===== -->
     <header>
         <div class="container">
             <div class="logo">Игорь Андриянов</div>
@@ -596,7 +557,6 @@
         </div>
     </header>
 
-    <!-- ===== HERO ===== -->
     <section class="hero">
         <div class="container">
             <div class="hero-text">
@@ -610,11 +570,9 @@
                     <a href="#contacts" class="btn-secondary">Связаться</a>
                 </div>
             </div>
-            <!-- Правая колонка оставлена пустой, так как фон уже содержит картинку -->
         </div>
     </section>
 
-    <!-- ===== УСЛУГИ ===== -->
     <section id="services">
         <div class="container">
             <h2 class="section-title">Мои услуги</h2>
@@ -647,30 +605,25 @@
         </div>
     </section>
 
-    <!-- ===== ТИПОВЫЕ ПОТОКИ ===== -->
     <section id="cases" style="background: rgba(10, 25, 47, 0.5);">
         <div class="container">
             <h2 class="section-title">Типовые потоки интеграций</h2>
             <div class="cases-grid">
-
                 <div class="case-card">
                     <div class="case-title">1.1 Выгрузка номенклатуры и цен из 1С:ERP в Excel</div>
                     <div class="case-meta">XLSX · 1С → файл формата XLSX</div>
                     <p class="case-desc">Срез последних на дату, маппинг 15 полей</p>
                 </div>
-
                 <div class="case-card">
                     <div class="case-title">1.2 Загрузка номенклатуры поставщиков из Excel в 1С:ERP</div>
                     <div class="case-meta">XLSX · файл формата XLSX → 1С</div>
                     <p class="case-desc">Уникальность артикул+поставщик, протокол ошибок</p>
                 </div>
-
                 <div class="case-card">
                     <div class="case-title">2.1 Загрузка заказов из CRM в 1С:ERP</div>
                     <div class="case-meta">JSON · REST GET</div>
                     <p class="case-desc">Проверка контрагентов, расчёт варианта обеспечения</p>
                 </div>
-
                 <div class="case-card">
                     <div class="case-title">2.2 Выгрузка РТУ из 1С:ERP в WMS/шину (JSON)</div>
                     <div class="case-meta">JSON · REST POST</div>
@@ -679,7 +632,6 @@
                         <em>Ключевые решения:</em> построчный признак отправки, Basic auth, повторы при ошибках.
                     </p>
                 </div>
-
                 <div class="case-card">
                     <div class="case-title">3.1 Загрузка контрагентов из CRM в 1С:ERP (XML)</div>
                     <div class="case-meta">XML · REST POST</div>
@@ -688,7 +640,6 @@
                         <em>Ключевые решения:</em> валидация ИНН, создание/обновление по ключу, детальный XML-ответ, Basic auth.
                     </p>
                 </div>
-
                 <div class="case-card">
                     <div class="case-title">3.2 Выгрузка РТУ из 1С:ERP в WMS/шину (XML + XSD)</div>
                     <div class="case-meta">XML · REST POST</div>
@@ -697,10 +648,8 @@
                         <em>Ключевые решения:</em> XSD-схема 3.2, построчный признак отправки, регламентное задание.
                     </p>
                 </div>
-
             </div>
 
-            <!-- Блок запроса примеров -->
             <div class="request-block">
                 <p>📄 Полные примеры ТЗ на разработку каждого из этих потоков интеграции — вышлю по запросу.</p>
                 <a href="#contacts" class="btn-primary">Запросить примеры ТЗ</a>
@@ -708,7 +657,6 @@
         </div>
     </section>
 
-    <!-- ===== ПРЕИМУЩЕСТВА ===== -->
     <section id="benefits">
         <div class="container">
             <h2 class="section-title">Что вы получаете, заказывая ТЗ у меня</h2>
@@ -722,7 +670,6 @@
         </div>
     </section>
 
-    <!-- ===== ТЕХНОЛОГИЧЕСКИЙ СТЕК ===== -->
     <section style="background: rgba(10, 25, 47, 0.5);">
         <div class="container">
             <h2 class="section-title">С чем работаю</h2>
@@ -745,7 +692,6 @@
         </div>
     </section>
 
-    <!-- ===== ОБО МНЕ ===== -->
     <section>
         <div class="container">
             <h2 class="section-title">Обо мне</h2>
@@ -757,7 +703,6 @@
         </div>
     </section>
 
-    <!-- ===== ФУТЕР ===== -->
     <footer id="contacts">
         <div class="container">
             <h2>Свяжитесь со мной</h2>

@@ -25,7 +25,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
-            position: relative; /* для позиционирования фона внутри */
+            position: relative;
         }
 
         /* ----- ШАПКА ----- */
@@ -114,16 +114,16 @@
             min-height: 80vh;
             display: flex;
             align-items: center;
-            background: #0a192f; /* чтобы не было просветов */
+            background: #0a192f;
         }
 
-        /* Фоновая картинка — внутри контейнера */
+        /* Фоновая картинка — внутри контейнера, сдвинута влево */
         .hero-bg {
             position: absolute;
             top: 50%;
-            right: 0;
+            right: 15%;              /* ← сдвиг от правого края, чтобы не прижималась */
             transform: translateY(-50%);
-            width: 60%;            /* занимает 60% ширины контейнера */
+            width: 55%;              /* чуть шире, чтобы занимала больше места */
             height: 90%;
             background-image: url('images/gpt-image-2_Futuristic_digital_artwork_symbolizing_enterprise_integration_a_massive_luminous-0.jpg');
             background-size: contain;
@@ -132,17 +132,17 @@
             opacity: 0.85;
             filter: brightness(1.1) contrast(1.05);
             z-index: 0;
-            pointer-events: none; /* чтобы не мешать кликам */
+            pointer-events: none;
         }
 
-        /* Лёгкая вуаль слева, чтобы текст читался (опционально) */
+        /* Лёгкая вуаль слева, чтобы текст читался */
         .hero-vignette {
             position: absolute;
             top: 0;
             left: 0;
             bottom: 0;
             width: 50%;
-            background: linear-gradient(to right, rgba(10, 25, 47, 0.0) 0%, rgba(10, 25, 47, 0.4) 100%);
+            background: linear-gradient(to right, rgba(10, 25, 47, 0.0) 0%, rgba(10, 25, 47, 0.3) 100%);
             z-index: 1;
             pointer-events: none;
         }
@@ -502,6 +502,7 @@
                 justify-content: center;
             }
             .hero-bg {
+                right: 0;
                 width: 100%;
                 height: 100%;
                 background-position: center;
@@ -576,11 +577,8 @@
     </header>
 
     <section class="hero">
-        <!-- Фоновая картинка (внутри контейнера) -->
         <div class="hero-bg"></div>
-        <!-- Лёгкая вуаль слева -->
         <div class="hero-vignette"></div>
-
         <div class="container">
             <div class="hero-text">
                 <h1>Бизнес-аналитик <span>1С:ERP</span><br />Архитектор интеграций</h1>
@@ -596,7 +594,7 @@
         </div>
     </section>
 
-    <!-- Остальные секции без изменений ... -->
+    <!-- Остальные секции без изменений (скопированы из предыдущего кода) -->
     <section id="services">
         <div class="container">
             <h2 class="section-title">Мои услуги</h2>
